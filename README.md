@@ -5,7 +5,7 @@
 ## Overview
 
 This project is a fully functional **E‑Commerce Backend API** built
-using a clean, scalable, and production‑ready architecture.\
+using a clean, scalable, and production‑ready architecture.
 It includes complete modules for authentication, users, categories,
 products, cart, orders, reviews, and admin operations.
 
@@ -17,14 +17,14 @@ operations across all modules.
 
 ## Tech Stack
 
--   Node.js\
--   Express.js\
--   TypeScript\
--   MongoDB & Mongoose\
--   Zod Validation\
--   JWT Authentication\
--   Cloudinary for File Uploads\
--   Express Rate Limiter\
+-   Node.js
+-   Express.js
+-   TypeScript
+-   MongoDB & Mongoose
+-   Zod Validation
+-   JWT Authentication
+-   Cloudinary for File Uploads
+-   Express Rate Limiter
 -   Clean Architecture (Repository + Factory + DTO + Entity)
 
 ------------------------------------------------------------------------
