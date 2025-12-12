@@ -45,7 +45,7 @@ declare module "jsonwebtoken" {
   }
 }
 
-declare module "JsonWebToken" {
+declare module "jsonwebtoken" {
   interface JwtPayload {
     _id?: ObjectId;
     role?: string;
