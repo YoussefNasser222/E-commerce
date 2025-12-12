@@ -1,9 +1,11 @@
 {
   "name": "e-commerce",
   "version": "1.0.0",
-  "main": "./dist/index.js",
+  "main": "dist/index.js",
   "type": "commonjs",
   "scripts": {
+    "start": "node dist/index.js",
+    "build": "tsc",
     "start:dev": "concurrently -n \"TSC,NODE\" -c \"blue,green\" \"tsc --watch\" \"nodemon .\""
   },
   "keywords": [],
@@ -16,7 +18,9 @@
     "@types/multer": "^2.0.0",
     "@types/node": "^24.10.1",
     "@types/nodemailer": "^7.0.4",
-    "concurrently": "^9.2.1"
+    "concurrently": "^9.2.1",
+    "nodemon": "^3.1.0",
+    "typescript": "^5.4.0"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
