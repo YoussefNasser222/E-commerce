@@ -9,6 +9,6 @@ export const connectDB = () => {
       log("connected db successfully");
     })
     .catch((err) => {
-      log(err);
+      log("field to connect to DB" , err);
     });
 };
