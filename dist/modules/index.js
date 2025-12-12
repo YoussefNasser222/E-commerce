@@ -1,0 +1,20 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.reviewRouter = exports.orderRouter = exports.cartRouter = exports.productRouter = exports.categoryRouter = exports.userRouter = exports.authRouter = void 0;
+const auth_controller_1 = __importDefault(require("./auth/auth.controller"));
+exports.authRouter = auth_controller_1.default;
+const user_controller_1 = __importDefault(require("./user/user.controller"));
+exports.userRouter = user_controller_1.default;
+const category_controller_1 = __importDefault(require("./category/category.controller"));
+exports.categoryRouter = category_controller_1.default;
+const product_controller_1 = __importDefault(require("./product/product.controller"));
+exports.productRouter = product_controller_1.default;
+const cart_controller_1 = __importDefault(require("./cart/cart.controller"));
+exports.cartRouter = cart_controller_1.default;
+const order_controller_1 = __importDefault(require("./order/order.controller"));
+exports.orderRouter = order_controller_1.default;
+const review_controller_1 = __importDefault(require("./review/review.controller"));
+exports.reviewRouter = review_controller_1.default;

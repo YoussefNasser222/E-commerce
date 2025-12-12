@@ -1,0 +1,20 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const multer_1 = require("../../utils/multer");
+const middleware_1 = require("../../middleware");
+const product_service_1 = __importDefault(require("./product.service"));
+const middleware_2 = require("../../middleware");
+const product_validation_1 = require("./product.validation");
+const file_many_validation_middleware_1 = require("../../middleware/file.many.validation.middleware");
+const router = (0, express_1.Router)();
+router.post("/", middleware_1.isAuth, middleware_1.isAdmin, (0, multer_1.UploadFile)().single("mainImage"), middleware_1.fileValidation, (0, middleware_2.isValid)(product_validation_1.addProductValidation), product_service_1.default.addProduct);
+router.patch("/:id", middleware_1.isAuth, middleware_1.isAdmin, (0, multer_1.UploadFile)().array("images", 5), file_many_validation_middleware_1.manyFilesValidation, (0, middleware_2.isValid)(product_validation_1.updateProductSchema), product_service_1.default.updateProduct);
+router.get("/search", product_service_1.default.searchProduct);
+router.get("/:id", product_service_1.default.getSpecificProduct);
+router.delete("/:id", middleware_1.isAuth, middleware_1.isAdmin, product_service_1.default.deleteProduct);
+router.get("/", product_service_1.default.getAllProduct);
+exports.default = router;

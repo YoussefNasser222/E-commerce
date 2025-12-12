@@ -1,0 +1,19 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const auth_service_1 = __importDefault(require("./auth.service"));
+const validation_middleware_1 = require("../../middleware/validation.middleware");
+const auth_validation_1 = require("./auth.validation");
+const middleware_1 = require("../../middleware");
+const router = (0, express_1.Router)();
+router.post("/register", (0, validation_middleware_1.isValid)(auth_validation_1.registerSchema), auth_service_1.default.register);
+router.post("/verify-account", (0, validation_middleware_1.isValid)(auth_validation_1.verifyAccountSchema), auth_service_1.default.verifyAccount);
+router.post("/login", (0, validation_middleware_1.isValid)(auth_validation_1.logInValidationSchema), auth_service_1.default.logIn);
+router.post("/resend-otp", auth_service_1.default.resendOtp);
+router.post("/reset-password", (0, validation_middleware_1.isValid)(auth_validation_1.resetpasswordSchema), auth_service_1.default.resetpassword);
+router.post("/log-out", middleware_1.isAuth, auth_service_1.default.logOut);
+router.post("refresh-token", auth_service_1.default.refreshToken);
+exports.default = router;
