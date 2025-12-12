@@ -18,7 +18,7 @@ export enum TokenType {
 export enum StatusOrder {
   confirmed = "confirmed",
   pending = "pending",
-  canalled = "cancelled",
+  cancelled = "cancelled",
 }
 export enum Payment {
   cash = "cash",

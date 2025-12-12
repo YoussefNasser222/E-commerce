@@ -122,7 +122,7 @@ class OrderService {
     await this.orderRepository.update(
       { _id: id },
       {
-        status: StatusOrder.canalled,
+        status: StatusOrder.cancelled,
       }
     );
     return res.sendStatus(204);
@@ -131,14 +131,14 @@ class OrderService {
     const { id } = req.params;
     const orderExist = await this.orderRepository.getOne({
       _id: id,
-      status: StatusOrder.canalled,
+      status: StatusOrder.cancelled,
     });
     if (!orderExist) {
       throw new NotFoundException("Order not found");
     }
     await this.orderRepository.deleteOne({
       _id: id,
-      status: StatusOrder.canalled,
+      status: StatusOrder.cancelled,
     });
     return res.sendStatus(204);
   };
